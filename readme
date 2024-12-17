@@ -1,0 +1,4 @@
+composer install --ignore-platform-reqs
+mkdir temp log
+chmod -R 777 temp log
+php -S localhost:8000 -t public

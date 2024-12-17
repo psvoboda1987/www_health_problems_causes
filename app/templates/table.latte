@@ -1,0 +1,35 @@
+{varType array $header}
+{varType array $data}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<table class="w3-table w3-hoverable w3-bordered">
+    <tr>
+        <th n:foreach="$header as $row">{$row}</th>
+    </tr>
+    {foreach $data as $index => $row}
+        <tr id="{$index}">
+            {var string $color = \App\Csv\CsvPresenter::getColor($iterator->getCounter())}
+            <td class="{$color}">
+                <a href="?action=favorite&id={$row['id']}&referer={$index}">
+                    {$row['problem']}
+                </a>
+            </td>
+            <td class="{$color}">{$row['cause']}</td>
+            <td class="{$color}">{$row['solution']}</td>
+            {*            <td n:foreach="$row as $key => $value" id="{$key}" class="{getColor($iterator)}">*}
+{*                {$value}*}
+{*            </td>*}
+        </tr>
+    {/foreach}
+</table>
+</body>
+</html>

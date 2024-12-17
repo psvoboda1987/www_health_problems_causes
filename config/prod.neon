@@ -1,0 +1,8 @@
+parameters:
+
+dibi:
+	host: localhost
+	username: 'app.25576'
+	password: 'ylVYbSHw3:VQ7Gk.J'
+	database: 'app_25576'
+	lazy: true
