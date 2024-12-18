@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Duchovní příčiny zdravotních problémů</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/undefined/dog-footprint.png" type="image/x-icon">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.foundation.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
+</head>
+
+<body style="padding: 1rem;">
+    <table id="myTable" class="display hover"></table>
+
+    <script src="js/data.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                data: data,
+                columns: [
+                    { data: 'problem' },
+                    { data: 'cause' },
+                    { data: 'solution' }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,8 +1,0 @@
-parameters:
-
-dibi:
-	host: localhost
-	username: root
-	password: pokora127
-	database: test
-	lazy: true
