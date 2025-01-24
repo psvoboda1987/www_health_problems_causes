@@ -19,8 +19,9 @@
 <body style="padding: 1rem; max-width: 1024px; margin: auto;">
     <table id="myTable" class="display hover"></table>
 
-    <script src="js/data.js"></script>
-    <script>
+    <script type="module">
+        const data = await fetch('data.json')
+            .then(response => response.json());
         $(document).ready(function () {
             $('#myTable').DataTable({
                 data: data,
